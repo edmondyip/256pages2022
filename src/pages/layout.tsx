@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import { PageNavigator } from "components/navigator";
 import { useGetLayoutQuery } from "store/feature/layout/layoutApi";
 import Logo from "components/logo";
-import { useRouter } from "next/router";
 
 const ThemeSwitch = dynamic(() => import("components/themeSwitch"), {
 	ssr: false,

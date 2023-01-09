@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@anatoliygatt/dark-mode-toggle": "^1.0.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@next/font": "^13.1.1",
     "@react-spring/core": "^9.6.1",
     "@react-spring/three": "^9.6.1",

@@ -5,6 +5,11 @@ const path = require('path')
 const nextConfig = () => ({
 	reactStrictMode: true,
 	swcMinify: true,
+	images: {
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+		// minimumCacheTTL: 60,
+  },
 	env: {
 		BASE_URL: "http://localhost:3000"
 	},
