@@ -5,10 +5,12 @@ body {
 
 :root[data-theme="light"] {
 	--bg-color: #f4f4f5;
+	--font-color: #27272a;
 }
 
 :root[data-theme="dark"] {
 	--bg-color: #27272a;
+	--font-color: #f4f4f5;
 }
 
 body {
@@ -30,6 +32,12 @@ body {
 		position: relative;
 		z-index: -100;
 		animation: fade-in 2s ease 0.5s forwards;
+	}
+
+	.logo {
+		path {
+			fill: var(--font-color);
+		}
 	}
 
 	main.index {
