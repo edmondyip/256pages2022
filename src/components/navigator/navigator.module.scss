@@ -1,0 +1,23 @@
+.nav {
+	@apply flex justify-center w-full;
+	.items {
+		@apply list-none cursor-pointer relative z-10 px-8 after:inset-0 after:origin-right after:z-0 after:content-DEFAULT after:bg-yellow-400 after:block after:absolute after:transition hover:after:origin-left;
+		&::after {
+			transform: scaleX(0);
+		}
+		&:hover::after {
+			transform: scaleX(1);
+		}
+		span {
+			@apply text-5xl mr-2;
+		}
+		a {
+			@apply relative z-10 lowercase flex;
+		}
+		&:hover {
+			a {
+				@apply transition text-black;
+			}
+		}
+	}
+}

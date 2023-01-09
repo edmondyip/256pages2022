@@ -27,6 +27,13 @@
 			}
 		]
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "windi.config.js"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		"windi.config.js",
+		"src/components/indexTitle/index.tsx"
+	],
 	"exclude": ["node_modules"]
 }
