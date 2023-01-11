@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTrail, a } from "@react-spring/web";
-import { outfit, bigShouldersDisplay } from "styles/fonts";
-import styles from "./indexTitle.module.scss";
 import { list } from "./index";
+import styles from "./indexTitle.module.scss";
 
 interface titleProps {
 	index: number;
@@ -29,7 +28,7 @@ const Index3dTitle = ({ index }: titleProps) => {
 	return (
 		<div className={styles.container}>
 			<Trail open={open}>
-				<h1 className={`${styles.title} ${bigShouldersDisplay.className}`}>{videoTitle}</h1>
+				<h1 className={styles.title}>{videoTitle}</h1>
 			</Trail>
 		</div>
 	);

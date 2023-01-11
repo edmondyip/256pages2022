@@ -1,5 +1,13 @@
+.container {
+	display: block;
+	height: 110px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
 .title {
 	font-size: 1.4rem;
 	text-align: center;
-	display: block;
+	font-family: var(--firaCode-font);
 }
