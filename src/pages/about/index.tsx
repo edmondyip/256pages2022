@@ -1,3 +1,4 @@
+import BackgroundTitle from "components/backgroundTitle";
 import { MetaHead } from "components/metaHead";
 import { GetStaticProps } from "next";
 import { metaDescription, pageContent } from "types/layout";
@@ -25,8 +26,8 @@ const AboutPage = ({ content, metaDescription }: PageProps) => {
 	return (
 		<>
 			<MetaHead meta={metaDescription} />
+				<BackgroundTitle title={content.title} />
 			<section>
-				<h1>{content.title}</h1>
 				<div>{content.content}</div>
 			</section>
 		</>
