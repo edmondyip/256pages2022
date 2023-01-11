@@ -15,7 +15,7 @@ body {
 
 body {
 	transition: 0.5s;
-	background: --var(--bg-color);
+	background: var(--bg-color);
 
 	h1 {
 		font-family: var(--bigShouldsDisplay-font);
@@ -26,25 +26,37 @@ body {
 		text-decoration: none;
 	}
 
-	canvas {
-		min-height: 80vh;
-		touch-action: none;
+	header {
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(50px);
+		-webkit-backdrop-filter: blur(50px);
 		position: relative;
-		z-index: -100;
-		animation: fade-in 2s ease 0.5s forwards;
-	}
-
-	.logo {
-		path {
-			fill: var(--font-color);
+		z-index: 10;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+		.logo {
+			path {
+				fill: var(--font-color);
+			}
 		}
 	}
 
-	main.index {
-		margin-top: -40px;
-	}
-	button {
-		border: 1px solid #fff;
+	main {
+		font-family: var(--firaCode-font);
+		&.index {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			canvas {
+				min-height: 100vh;
+				touch-action: none;
+				position: relative;
+				z-index: -100;
+				animation: fade-in 2s ease 0.5s forwards;
+			}
+		}
 	}
 }
 
