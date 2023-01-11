@@ -6,93 +6,57 @@ import {
 	ContactShadows,
 	Text3D,
 	Text,
-	Box,
-	MeshDistortMaterial,
+	Environment,
 } from "@react-three/drei";
 import { useSpring } from "@react-spring/core";
-import { a, animated } from "@react-spring/three";
+import { a } from "@react-spring/three";
 import {
-	Bloom,
 	DepthOfField,
 	EffectComposer,
 	SSAO,
 } from "@react-three/postprocessing";
 import { list } from ".";
-import { Mesh, MeshDistanceMaterial, MeshStandardMaterial } from "three";
+import Pages from "./pages";
 
 interface canvasProps {
 	index: number;
 }
 
-const Index3dCanvas = ({ index }: canvasProps) => {
-	return (
-		<Canvas shadows camera={{ position: [0, 0, 120], fov: 20 }}>
-			<Suspense fallback={null}>
-				<MeshComponent index={index} />
-			</Suspense>
-		</Canvas>
-	);
-};
-
 const MeshComponent = ({ index }: canvasProps) => {
-	const myMesh = React.useRef<Mesh>(null!);
-	const AnimatedMeshDistortMaterial = animated(MeshDistortMaterial);
-	useFrame(({ clock }) => {
-		const a = clock.getElapsedTime();
-		myMesh.current.rotation.y = a;
-	});
 	return (
 		<>
-			<ambientLight intensity={0.2} />
+			{/* <ambientLight intensity={0.2} /> */}
 			<spotLight
 				position={[25, 20, 25]}
-				penumbra={1}
+				// penumbra={1}
 				angle={0.25}
 				color="white"
 				castShadow
 				shadow-mapSize={[512, 512]}
 			/>
 			<VideoTitle index={index} />
-			<a.mesh ref={myMesh} rotation={[0.5,0,0]} position={[3, 1, -3]}>
-				<boxBufferGeometry
-					castShadow
-					receiveShadow
-					attach="geometry"
-					args={[0.5, 0.5, 0.5]}
-				/>
-				<meshStandardMaterial
-					roughness={0.5}
-					attach="material"
-					// color={"green"}
-				/>
-			</a.mesh>
-			<a.mesh position={[4, 0, -4]}>
-				<boxBufferGeometry
-					castShadow
-					receiveShadow
-					attach="geometry"
-					args={[0.3, 0.3, 0.2]}
-				/>
-				<meshStandardMaterial
-					roughness={0.5}
-					attach="material"
-					// color={"#7a4900"}
-				/>
-			</a.mesh>
 			<ContactShadows
-				frames={5000}
+				frames={1000}
 				position={[0, -1.5, 0]}
 				blur={2}
 				opacity={0.5}
 			/>
 			<Intro />
 			<EffectComposer>
+				<SSAO
+					samples={10}
+					radius={10}
+					intensity={10}
+					luminanceInfluence={0.1}
+					color="red"
+				/>
 				<DepthOfField
 					target={[0, 0, 0]}
 					focalLength={0.01}
 					bokehScale={10}
 					height={500}
 				/>
+				{/* <Bloom mipmapBlur luminanceThreshold={1} radius={0.7} /> */}
 			</EffectComposer>
 		</>
 	);
@@ -163,9 +127,8 @@ const VideoTitle = ({ index }: canvasProps) => {
 						<videoTexture
 							attach="map"
 							args={[video]}
-							offset={new THREE.Vector2(0.1, 0.1)}
+							offset={new THREE.Vector2(0, 0.1)}
 							wrapT={THREE.MirroredRepeatWrapping}
-							encoding={THREE.sRGBEncoding}
 						/>
 					</meshBasicMaterial>
 				</Text>
@@ -183,6 +146,33 @@ const Intro = () => {
 		);
 		state.camera.lookAt(0, 0, 0);
 	});
+};
+
+function Env() {
+	return (
+		<Environment
+			preset="dawn"
+			background
+			blur={0.6}
+		/>
+	);
+}
+
+const Index3dCanvas = ({ index }: canvasProps) => {
+	return (
+		<Canvas
+			gl={{ antialias: true }}
+			shadows
+			camera={{ position: [0, 0, 250], fov: 22 }}
+			linear
+		>
+			<Suspense fallback={null}>
+				<MeshComponent index={index} />
+				<Pages />
+				<Env />
+			</Suspense>
+		</Canvas>
+	);
 };
 
 export default Index3dCanvas;

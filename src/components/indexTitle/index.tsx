@@ -33,12 +33,10 @@ export const list: listItem[] = [
 ];
 
 const index3d = () => {
-	const [videoTitle, setVideoTitle] = useState<listItem>(list[0]);
 	const [count, setCount] = useState<number>(0);
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
-			setVideoTitle(list[count]);
 			return count === 3 ? setCount(0) : setCount(count + 1);
 		}, 5000);
 
