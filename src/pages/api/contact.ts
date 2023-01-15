@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { metaDescription, pageContent } from "types/layout";
 
-interface contact {
+interface contactProps {
   content: pageContent,
 	metaDescription: metaDescription
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<contact>) => {
+export default (req: NextApiRequest, res: NextApiResponse<contactProps>) => {
 	res.status(200).json({
 		content: {
 			title: "256pages",

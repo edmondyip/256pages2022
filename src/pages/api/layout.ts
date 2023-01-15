@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { layout } from "../../types/layout";
+import { layout } from "types/layout";
 
 export default (
 	req: NextApiRequest,
@@ -12,8 +12,8 @@ export default (
         path: "/about"
       },
       {
-        label: "Project",
-        path: "/project"
+        label: "Case",
+        path: "/case"
       },
       {
         label: "Contact",
@@ -25,6 +25,6 @@ export default (
       }
 		],
 		header: "header",
-		footer: "footer",
+		copyright: "256pages",
 	});
 };
