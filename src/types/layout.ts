@@ -6,7 +6,7 @@ export interface navItem {
 export interface layout {
 	nav: navItem[];
 	header: string;
-	footer: string;
+	copyright: string;
 }
 
 export interface pageContent {

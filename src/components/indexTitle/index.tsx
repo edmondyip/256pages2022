@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Index3dCanvas from "./canvas";
 import Index3dTitle from "./title";
+import styles from "./indexTitle.module.scss";
 
 export interface listItem {
 	video: string;
@@ -32,7 +33,7 @@ export const list: listItem[] = [
 	},
 ];
 
-const index3d = () => {
+const Index3d = () => {
 	const [count, setCount] = useState<number>(0);
 
 	useEffect(() => {
@@ -44,11 +45,11 @@ const index3d = () => {
 	}, [count]);
 
 	return (
-		<>
+		<div className={styles.indexTitle}>
 			<Index3dCanvas index={count} />
 			<Index3dTitle index={count} />
-		</>
+		</div>
 	);
 };
 
-export default index3d;
+export default Index3d;

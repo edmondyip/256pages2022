@@ -25,8 +25,10 @@ const Page = () => {
 			<meshStandardMaterial
 				attach="material"
 				color={"white"}
-				roughness={0.6}
+				roughness={1}
 				metalness={0.1}
+				opacity={0.8}
+				transparent
 			/>
 		</mesh>
 	);
