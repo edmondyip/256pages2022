@@ -1,3 +1,4 @@
 .frame {
-	@apply block bg-white rounded;
+	@apply block rounded;
+	background: --var(--font-color);
 }

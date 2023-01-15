@@ -25,7 +25,7 @@ const HomePage = ({ content, metaDescription }: PageProps) => {
 	return (
 		<>
 			<MetaHead meta={metaDescription} />
-			<Index3d />
+			{/* <Index3d /> */}
 		</>
 	);
 };

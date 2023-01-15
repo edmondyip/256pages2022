@@ -1,19 +1,23 @@
 .logo {
-	svg {
-		@apply relative z-10;
-		width: 80px;
-		height: 15px;
-		&:hover {
-			path {
-				fill: black;
-			}
+	a {
+		svg {
+			@apply relative z-10;
+			width: 80px;
+			height: 15px;
 		}
 	}
-	@apply list-none cursor-pointer relative py-1 after:inset-0 after:origin-right after:z-0 after:content-DEFAULT after:bg-yellow-400 after:block after:absolute after:transition hover:after:origin-left;
+	@apply list-none cursor-pointer py-2 relative after:inset-0 after:origin-right after:z-0 after:content-DEFAULT after:bg-yellow-400 after:block after:absolute after:transition hover:after:origin-left;
 	&::after {
 		transform: scaleX(0);
 	}
 	&:hover::after {
 		transform: scaleX(1);
+	}
+	&:hover {
+		svg {
+			path {
+				fill: black !important;
+			}
+		}
 	}
 }

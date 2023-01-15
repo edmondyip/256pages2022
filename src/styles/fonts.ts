@@ -1,4 +1,4 @@
-import { Big_Shoulders_Display, Outfit, Fira_Code } from "@next/font/google";
+import { Big_Shoulders_Display, Outfit, Fira_Code, Oswald } from "@next/font/google";
 
 export const bigShouldersDisplay = Big_Shoulders_Display({
   subsets: ["latin"],
@@ -16,4 +16,10 @@ export const firaCode = Fira_Code({
 	subsets: ["latin"],
 	weight: "300",
 	variable: "--firaCode-font"
+})
+
+export const oswald = Oswald({
+	subsets: ["latin"],
+	weight: "700",
+	variable: "--oswald-font"
 })

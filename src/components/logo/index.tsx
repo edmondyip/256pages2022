@@ -3,8 +3,8 @@ import styles from "./logo.module.scss";
 
 const Logo = () => {
 	return (
-		<div className={`${styles.logo} flex align-middle mt-2`}>
-			<Link href={"/"}>
+		<div className={`${styles.logo} flex align-middle`}>
+			<Link href={"/"} title="home">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width={60}
