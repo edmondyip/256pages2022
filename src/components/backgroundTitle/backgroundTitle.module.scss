@@ -1,9 +1,10 @@
 .title {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	opacity: 0.02;
 	letter-spacing: -1rem;
 	font-size: 60vh;
+	line-height: 1;
 	pointer-events: none;
 }

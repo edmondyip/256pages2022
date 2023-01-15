@@ -28,7 +28,7 @@ const AboutPage = ({ content, metaDescription }: PageProps) => {
 			<MetaHead meta={metaDescription} />
 				<BackgroundTitle title={content.title} />
 			<section>
-				<div>{content.content}</div>
+				<p>{content.content}</p>
 			</section>
 		</>
 	);
