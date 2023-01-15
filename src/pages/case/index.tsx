@@ -1,8 +1,10 @@
 import { GetServerSideProps } from "next";
 import { metaDescription, pageContent } from "types/layout";
+import { MetaHead } from "components/metaHead";
+import BackgroundTitle from "components/backgroundTitle";
 
 export const getServerSideProps: GetServerSideProps = async () => {
-	const res = await fetch(`${process.env.BASE_URL}/api/project`);
+	const res = await fetch(`${process.env.BASE_URL}/api/case`);
 	const data = await res.json();
 	const pageProps: PageProps = {
 		content: data.content,
@@ -21,13 +23,16 @@ interface PageProps {
 	projects: string[];
 }
 
-const ProjectPage = ({ content, metaDescription, projects }: PageProps) => {
+const CasePage = ({ content, metaDescription }: PageProps) => {
 	return (
-		<section>
-			<h1>{content.title}</h1>
-			<div>{content.content}</div>
-		</section>
+		<>
+			<MetaHead meta={metaDescription} />
+				<BackgroundTitle title={content.title} />
+			<section>
+				<p>{content.content}</p>
+			</section>
+		</>
 	);
 };
 
-export default ProjectPage;
+export default CasePage;

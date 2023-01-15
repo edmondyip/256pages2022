@@ -1,22 +1,22 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { metaDescription, pageContent } from "types/layout";
 
-interface project {
+interface caseProps {
 	content: pageContent;
 	metaDescription: metaDescription;
 	projects: string[];
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<project>) => {
+export default (req: NextApiRequest, res: NextApiResponse<caseProps>) => {
 	res.status(200).json({
 		content: {
-			title: "256pages",
-			content: "I am Edmond Yip",
+			title: "case",
+			content: "I developed over 100 websites in my career, let me show some cases",
 		},
 		metaDescription: {
-			pageTitle: "project - 256pages",
+			pageTitle: "case - 256pages",
 			pageDescription: "",
-			canonicalUrl: "/project",
+			canonicalUrl: "/case",
 		},
 		projects: ["PJ01","PJ02"],
 	});
