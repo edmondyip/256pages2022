@@ -19,7 +19,7 @@ export default defineConfig({
 				dark: colors.zinc,
 			},
 			fontFamily: {
-				big: ["\"Big Shoulders Display\""],
+				big: ['"Big Shoulders Display"'],
 				sans: ["Graphik", "sans-serif"],
 				serif: ["Merriweather", "serif"],
 			},
@@ -36,4 +36,24 @@ export default defineConfig({
 		include: ["**/*.{jsx,tsx,css}"],
 		exclude: ["node_modules", ".git", ".next"],
 	},
+	plugins: [
+		require("@windicss/plugin-heropatterns")({
+			// the list of patterns you want to generate a class for
+			// the names must be in kebab-case
+			// an empty array will generate all 87 patterns
+			patterns: ["polka-dots", "signal"],
+
+			// The foreground colors of the pattern
+			colors: {
+				default: "#fffff",
+				"blue-dark": "#000044", // also works with rgb(0,0,205)
+			},
+
+			// The foreground opacity
+			opacity: {
+				default: "0.4",
+				100: "1.0",
+			},
+		}),
+	],
 });
