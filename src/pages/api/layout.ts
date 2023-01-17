@@ -12,8 +12,8 @@ export default (
         path: "/about"
       },
       {
-        label: "Case",
-        path: "/case"
+        label: "Works",
+        path: "/works"
       },
       {
         label: "Contact",
