@@ -4,7 +4,7 @@ import { PageNavigator } from "components/navigator";
 import { useGetLayoutQuery } from "store/feature/layout/layoutApi";
 import Logo from "components/logo";
 import Copyright from "components/copyright";
-import { firaCode, bigShouldersDisplay, oswald } from "styles/fonts";
+import { firaCode, bigShouldersDisplay, oswald, outfit } from "styles/fonts";
 import Background from "components/background";
 
 const ThemeSwitch = dynamic(() => import("components/themeSwitch"), {
@@ -22,7 +22,7 @@ const Layout = ({ children, router }: IProps) => {
 	error && console.log(error);
 
 	return (
-		<div className={`layout ${router === "/" ? "index" : ""} ${bigShouldersDisplay.variable} ${firaCode.variable} ${oswald.variable}`}>
+		<div className={`layout ${router === "/" ? "index" : ""} ${bigShouldersDisplay.variable} ${firaCode.variable} ${oswald.variable} ${outfit.variable}`}>
 			<header className="container mx-auto grid grid-cols-[min-content,1fr,min-content] items-center p-2">
 				{isLoading ? <>loading</> : null}
 				<Logo />

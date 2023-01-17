@@ -8,7 +8,7 @@ const Page = () => {
 	const position = useMemo(() => {
 		return new Vector3(
 			MathUtils.randInt(-8, 8),
-			MathUtils.randInt(-3, 3),
+			MathUtils.randInt(-2, 2),
 			MathUtils.randInt(-3, 3)
 		);
 	}, []);
