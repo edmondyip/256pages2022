@@ -5,7 +5,7 @@ interface copyrightProps {
 
 const Copyright = ({ copy }: copyrightProps) => {
 	return (
-		<div className={`absolute bottom-2 right-2 text-xs whitespace-nowrap ${outfit.className}`}>
+		<div className={`fixed bottom-2 right-2 text-xs whitespace-nowrap ${outfit.className}`}>
 			{copy} &copy; 2023
 		</div>
 	);
