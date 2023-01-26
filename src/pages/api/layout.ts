@@ -21,7 +21,7 @@ export default (
       },
       {
         label: "Blog",
-        path: "/blog"
+        path: "https://blog.256pages.com"
       }
 		],
 		header: "header",

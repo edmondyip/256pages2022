@@ -9,28 +9,29 @@ interface aboutProps {
 export default (req: NextApiRequest, res: NextApiResponse<aboutProps>) => {
 	res.status(200).json({
 		metaDescription: {
-			pageTitle: "about - 256pages",
+			pageTitle: "About - 256pages",
 			pageDescription:
-				"Hi, i am a designer from Hong Kong. As my position is a full stack designer, that's mean i can design from graphic to user experience, also the front-end programming.",
+				"I am Edmond Yip. A Frontend Engineer 👨‍💻 base in Bristol 🇬🇧. Working with Typescript, React and Vue",
 			canonicalUrl: "/about",
 		},
 		content: {
-			"about": {
+			about: {
 				title: "about",
-				content: "Hi, I am Edmond Yip, a Frontend Engineer 👨‍💻 base in Bristol 🇬🇧. Working with Typescript, React and Vue.",
+				content:
+					"Hi, I am Edmond Yip, a Frontend Engineer 👨‍💻 base in Bristol 🇬🇧. Working with Typescript, React and Vue.",
 			},
-			"location": {
+			location: {
 				title: "location",
-				content: "I living from Hong Kong 🇭🇰 to United Kingdom 🇬🇧"
+				content: "I living from Hong Kong 🇭🇰 to United Kingdom 🇬🇧",
 			},
-			"position": {
+			position: {
 				title: "position",
-				content: "I working from Design 🎨 to Develop 💻"
+				content: "I working from Design 🎨 to Develop 💻",
 			},
-			"framework": {
+			framework: {
 				title: "framework",
-				content: "I learning from Vue to React"
-			}
+				content: "I learning from Vue to React",
+			},
 		},
 	});
 };
