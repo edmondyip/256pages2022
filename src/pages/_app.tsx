@@ -34,7 +34,7 @@ const app = ({ Component, pageProps, router }: AppProps) => {
 	const [animation, setAnimation] = useState(fadeBack);
 
 	return (
-		<ThemeProvider>
+		<ThemeProvider defaultTheme="dark">
 			<Provider store={store}>
 				<Layout router={router.pathname}>
 					<LazyMotion features={domAnimation}>
