@@ -12,10 +12,11 @@ interface pageProps {
 export const PageNavigatorItem = ({ item }: pageProps) => {
 	const router = useRouter()
 	const currentRoute = router.pathname
+	const isUrl = item.path.match(/https?:\/\//g)
 
 	return (
 		<li className={`${styles.items} ${currentRoute === item.path ? styles.active : ""}`}>
-			<Link className={`${firaCode.className}`} href={item.path}>
+			<Link className={`${firaCode.className}`} target={isUrl ? "_blank" : ""} href={item.path}>
 				{item.label}
 			</Link>
 		</li>
