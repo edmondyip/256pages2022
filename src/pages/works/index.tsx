@@ -2,7 +2,9 @@ import { GetServerSideProps } from "next";
 import { metaDescription, pageContent } from "types/layout";
 import { MetaHead } from "components/metaHead";
 import BackgroundTitle from "components/backgroundTitle";
-import Link from "next/link";
+import { work } from "pages/api/works";
+import styles from "./works.module.scss";
+import { WorkListItem } from "./listItem";
 
 export const getServerSideProps: GetServerSideProps = async () => {
 	const res = await fetch(`${process.env.BASE_URL}/api/works`);
@@ -10,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 	const pageProps: PageProps = {
 		content: data.content,
 		metaDescription: data.metaDescription,
-		projects: data.projects,
+		works: data.works,
 	};
 
 	return {
@@ -21,17 +23,31 @@ export const getServerSideProps: GetServerSideProps = async () => {
 interface PageProps {
 	content: pageContent;
 	metaDescription: metaDescription;
-	projects: string[];
+	works: work[];
 }
 
-const WorksPage = ({ content, metaDescription }: PageProps) => {
+const WorksPage = ({ content, metaDescription, works }: PageProps) => {
 	return (
 		<>
 			<MetaHead meta={metaDescription} />
-				<BackgroundTitle title={content.title} />
-			<section>
-				<p>{content.content}</p>
-				<Link href={"/works/works01"}>01</Link>
+			<BackgroundTitle title={content.title} />
+			<section className={styles.works}>
+				<h2>
+					<span className={styles.function}>works</span>() &#123;
+				</h2>
+				<p>
+					<span className={styles.return}>return</span> "
+					<span className={styles.code}>
+						I create over 100 website in my career.
+					</span>
+					"
+				</p>
+				<div className={styles.code}>&#125; ;</div>
+			</section>
+			<section className={styles.worksList}>
+				<ul>
+					<WorkListItem works={works} />
+				</ul>
 			</section>
 		</>
 	);

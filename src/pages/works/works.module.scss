@@ -1,0 +1,44 @@
+.works {
+	h2 {
+		@apply text-yellow-400;
+	}
+	p {
+		padding: 0.5rem 0 0 4rem;
+		img {
+			display: inline-block;
+			vertical-align: baseline;
+		}
+	}
+	.function {
+		color: var(--function-color);
+		@apply text-size-3xl;
+	}
+	.return {
+		color: var(--return-color);
+	}
+
+	.code {
+		color: var(--code-color);
+		@apply text-size-3xl;
+	}
+}
+
+.worksList {
+	ul {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 16px;
+		li {
+			background: var(--header-bg);
+			a {
+				display: block;
+				padding: 2px;
+				position: relative;
+			}
+			h2 {
+				padding: 8px;
+			}
+		}
+	}
+}

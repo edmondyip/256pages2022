@@ -10,7 +10,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 	const pageProps: PageProps = {
 		content: data.content,
 		metaDescription: data.metaDescription,
-		projects: data.projects,
+		works: data.projects,
 	};
 
 	return {
@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 interface PageProps {
 	content: pageContent;
 	metaDescription: metaDescription;
-	projects: string[];
+	works: string[];
 }
 
 const WorksPage = ({ content, metaDescription }: PageProps) => {
