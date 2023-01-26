@@ -3,7 +3,7 @@ const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
 const path = require('path')
 
 const nextConfig = () => ({
-	reactStrictMode: true,
+	reactStrictMode: false,
 	swcMinify: true,
 	images: {
     dangerouslyAllowSVG: true,
