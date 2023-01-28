@@ -1,3 +1,5 @@
+import BackgroundTitle from "components/backgroundTitle";
+import { MetaHead } from "components/metaHead";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { metaDescription, pageContent } from "types/layout";
@@ -23,15 +25,11 @@ interface PageProps {
 const ContactPage = ({ content, metaDescription }: PageProps) => {
 	return (
 		<>
-			<Head>
-				<title>{metaDescription.pageTitle}</title>
-			</Head>
+			<MetaHead meta={metaDescription} />
+			<BackgroundTitle title="contact" />
 			<section>
-				<h1>{content.title}</h1>
-				<details>
-					<summary>test</summary>
-					{content.content}
-				</details>
+				<p>{content.content}</p>
+				<p>Email: <a className="text-yellow-400" href="mailto:neta.edmond@gmail.com">neta.edmond@gmail.com</a></p>
 			</section>
 		</>
 	);

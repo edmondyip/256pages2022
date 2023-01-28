@@ -20,7 +20,7 @@ export interface work {
 	challenges: string;
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<worksProps>) => {
+const worksApi = (req: NextApiRequest, res: NextApiResponse<worksProps>) => {
 	res.status(200).json({
 		content: {
 			title: "works",
@@ -45,6 +45,21 @@ export default (req: NextApiRequest, res: NextApiResponse<worksProps>) => {
 				personalGrowth: "",
 				challenges: "",
 			},
+			{
+				name: "Vistair System",
+				id: "vistair",
+				cover: "/img/vistair.png",
+				video: "video/vistair.mp4",
+				url: "",
+				shortDescription:
+					"A Risk Management System in a Aviation Safety Software",
+				description: "",
+				techStack: "",
+				personalGrowth: "",
+				challenges: "",
+			},
 		],
 	});
 };
+
+export default worksApi;

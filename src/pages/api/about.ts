@@ -6,7 +6,7 @@ interface aboutProps {
 	metaDescription: metaDescription;
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<aboutProps>) => {
+const aboutApi = (req: NextApiRequest, res: NextApiResponse<aboutProps>) => {
 	res.status(200).json({
 		metaDescription: {
 			pageTitle: "About - 256pages",
@@ -35,3 +35,5 @@ export default (req: NextApiRequest, res: NextApiResponse<aboutProps>) => {
 		},
 	});
 };
+
+export default aboutApi;

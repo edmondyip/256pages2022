@@ -22,17 +22,19 @@ const Layout = ({ children, router }: IProps) => {
 	error && console.log(error);
 
 	return (
-		<div className={`layout ${router === "/" ? "index" : ""} ${bigShouldersDisplay.variable} ${firaCode.variable} ${oswald.variable} ${outfit.variable}`}>
+		<div
+			className={`layout ${router === "/" ? "index" : ""} ${
+				bigShouldersDisplay.variable
+			} ${firaCode.variable} ${oswald.variable} ${outfit.variable}`}
+		>
 			<header className="container mx-auto grid grid-cols-[min-content,1fr,min-content] items-center p-2">
 				{isLoading ? <>loading</> : null}
 				<Logo />
 				{data ? <PageNavigator nav={data.nav} /> : null}
 				<ThemeSwitch />
 			</header>
-				<main>
-					{children}
-				</main>
-				<Background path={pathname} />
+			<main>{children}</main>
+			<Background path={pathname} />
 			<footer>
 				<Copyright copy={data?.copyright} />
 			</footer>

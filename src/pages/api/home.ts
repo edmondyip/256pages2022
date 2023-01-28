@@ -6,7 +6,7 @@ interface homeProps {
 	metaDescription: metaDescription;
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<homeProps>) => {
+const homeApi = (req: NextApiRequest, res: NextApiResponse<homeProps>) => {
 	res.status(200).json({
 		content: {
 			title: "two hunderd and fifty six pages",
@@ -19,3 +19,5 @@ export default (req: NextApiRequest, res: NextApiResponse<homeProps>) => {
 		},
 	});
 };
+
+export default homeApi;

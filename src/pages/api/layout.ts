@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { layout } from "types/layout";
 
-export default (
+const layoutApi = (
 	req: NextApiRequest,
 	res: NextApiResponse<layout>
 ) => {
@@ -28,3 +28,5 @@ export default (
 		copyright: "256pages",
 	});
 };
+
+export default layoutApi;

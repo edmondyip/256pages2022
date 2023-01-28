@@ -36,11 +36,11 @@ const WorksPage = ({ content, metaDescription, works }: PageProps) => {
 					<span className={styles.function}>works</span>() &#123;
 				</h2>
 				<p>
-					<span className={styles.return}>return</span> "
+					<span className={styles.return}>return</span> &quot;
 					<span className={styles.code}>
 						I create over 100 website in my career.
 					</span>
-					"
+					&quot;
 				</p>
 				<div className={styles.code}>&#125; ;</div>
 			</section>
