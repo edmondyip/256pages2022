@@ -1,7 +1,7 @@
 html,
 body {
-	height: 100%;
-	font-size: 14px;
+	@apply h-full text-size-14px;
+	overflow-x: hidden;
 }
 
 :root[data-theme="light"] {
@@ -49,23 +49,60 @@ body {
 	}
 
 	p + p {
-		margin: 0.2rem 0;
+		margin: 1rem 0;
 	}
 
 	#__next {
 		height: 100%;
 		header {
-			background: var(--header-bg);
-			backdrop-filter: blur(20px);
-			-webkit-backdrop-filter: blur(20px);
-			position: sticky;
-			top: 0;
-			z-index: 10;
-			border-bottom-left-radius: 4px;
-			border-bottom-right-radius: 4px;
+			@apply container sticky mx-auto grid items-center p-0 top-0 z-10 rounded-b grid-cols-[min-content,1fr,min-content] sm:p-2;
+			grid-template-areas: "logo nav switch";
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background: var(--header-bg);
+				backdrop-filter: blur(10px);
+				z-index: 0;
+			}
 			.logo {
+				grid-area: logo;
 				path {
 					fill: var(--font-color);
+				}
+			}
+			.hamburger-react {
+				grid-area: burger;
+				@apply sm:hidden block;
+			}
+			.switch {
+				grid-area: switch;
+			}
+			.navigator {
+				grid-area: nav;
+				&.open {
+					left: 0px;
+					&::before {
+						left: 0px;
+					}
+				}
+			}
+			&.open {
+				height: auto;
+			}
+			@media only screen and (max-width: 600px) {
+				grid-template-areas: "burger logo switch" "nav nav nav";
+				.navigator {
+					position: relative;
+					// z-index: -10;
+					transition: all 0.5s;
+					margin-top: -300px;
+					&.open {
+						margin-top: 0;
+					}
 				}
 			}
 		}
@@ -78,7 +115,8 @@ body {
 				flex-direction: column;
 				position: absolute;
 				min-height: calc(100% - 0.5rem);
-				width: 100%;
+				left: 0;
+				right: 0;
 			}
 			main {
 				min-height: calc(100% - 51px);
@@ -90,8 +128,12 @@ body {
 						font-size: 1.8rem;
 						font-weight: 100;
 						position: relative;
+						white-space: wrap;
 					}
 					@apply m-20 relative;
+					@media only screen and (max-width: 600px) {
+						@apply m-10;
+					}
 				}
 			}
 			&.index {
@@ -117,6 +159,14 @@ body {
 			position: absolute;
 			bottom: 0;
 			right: 0;
+		}
+	}
+	@media only screen and (max-width: 600px) {
+		h2 {
+			@apply text-size-xl;
+		}
+		p {
+			@apply text-size-xl;
 		}
 	}
 }

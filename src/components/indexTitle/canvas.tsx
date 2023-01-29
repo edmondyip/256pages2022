@@ -17,6 +17,7 @@ import {
 } from "@react-three/postprocessing";
 import { list } from ".";
 import Pages from "./pages";
+import { isMobile } from "react-device-detect";
 
 interface canvasProps {
 	index: number;
@@ -25,10 +26,8 @@ interface canvasProps {
 const MeshComponent = ({ index }: canvasProps) => {
 	return (
 		<>
-			{/* <ambientLight intensity={0.2} /> */}
 			<spotLight
 				position={[25, 20, 25]}
-				// penumbra={1}
 				angle={0.25}
 				color="white"
 				castShadow
@@ -56,7 +55,6 @@ const MeshComponent = ({ index }: canvasProps) => {
 					bokehScale={10}
 					height={500}
 				/>
-				{/* <Bloom mipmapBlur luminanceThreshold={1} radius={0.7} /> */}
 			</EffectComposer>
 		</>
 	);
@@ -159,11 +157,13 @@ function Env() {
 }
 
 const Index3dCanvas = ({ index }: canvasProps) => {
+	const fov = isMobile ? 40 : 22;
+
 	return (
 		<Canvas
 			gl={{ antialias: true }}
 			shadows
-			camera={{ position: [0, 0, 250], fov: 22 }}
+			camera={{ position: [0, 0, 250], fov: fov }}
 			linear
 		>
 			<Suspense fallback={null}>

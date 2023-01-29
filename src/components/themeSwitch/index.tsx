@@ -1,17 +1,20 @@
 import { useTheme } from "next-themes";
-import { DarkModeToggle } from "@anatoliygatt/dark-mode-toggle";
+import { DarkModeToggle, Mode } from "@anatoliygatt/dark-mode-toggle";
 import styles from "./themeSwitch.module.scss";
+import { useState } from "react";
 
 const ThemeSwitch = () => {
-	const { theme, setTheme } = useTheme();
+	const [mode, setMode] = useState<Mode>("dark");
+	const { setTheme } = useTheme();
 
 	return (
-		<div className={styles.switch}>
+		<div className={`switch ${styles.switch}`}>
 			<DarkModeToggle
-				mode={theme}
+				mode={mode}
 				size="sm"
-				onChange={(theme) => {
-					setTheme(theme);
+				onChange={(mode) => {
+					setMode(mode);
+					setTheme(mode);
 				}}
 			/>
 		</div>

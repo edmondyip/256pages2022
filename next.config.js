@@ -11,7 +11,7 @@ const nextConfig = () => ({
 		// minimumCacheTTL: 60,
   },
 	env: {
-		BASE_URL: "http://localhost:3000"
+		BASE_URL: "http://192.168.0.13:3000"
 	},
 	webpack(config) {
     config.plugins.push(new WindiCSSWebpackPlugin())

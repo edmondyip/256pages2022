@@ -1,15 +1,9 @@
-import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import { PageNavigator } from "components/navigator";
 import { useGetLayoutQuery } from "store/feature/layout/layoutApi";
-import Logo from "components/logo";
 import Copyright from "components/copyright";
 import { firaCode, bigShouldersDisplay, oswald, outfit } from "styles/fonts";
 import Background from "components/background";
-
-const ThemeSwitch = dynamic(() => import("components/themeSwitch"), {
-	ssr: false,
-});
+import PageHeader from "components/PageHeader";
 
 interface IProps {
 	children: JSX.Element;
@@ -27,12 +21,8 @@ const Layout = ({ children, router }: IProps) => {
 				bigShouldersDisplay.variable
 			} ${firaCode.variable} ${oswald.variable} ${outfit.variable}`}
 		>
-			<header className="container mx-auto grid grid-cols-[min-content,1fr,min-content] items-center p-2">
-				{isLoading ? <>loading</> : null}
-				<Logo />
-				{data ? <PageNavigator nav={data.nav} /> : null}
-				<ThemeSwitch />
-			</header>
+			{isLoading ? <>loading</> : null}
+			<PageHeader nav={data?.nav} path={pathname} />
 			<main>{children}</main>
 			<Background path={pathname} />
 			<footer>

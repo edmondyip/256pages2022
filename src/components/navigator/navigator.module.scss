@@ -1,5 +1,5 @@
 .nav {
-	@apply flex justify-center w-full;
+	@apply justify-center w-full flex transition;
 	.items {
 		@apply list-none cursor-pointer relative z-10 after:inset-0 after:origin-right after:z-0 after:content-DEFAULT after:bg-yellow-400 after:block after:absolute after:transition hover:after:origin-left;
 		&::after {
@@ -12,16 +12,22 @@
 			@apply transition text-black bg-dark-400;
 			transform: scaleX(1);
 		}
-		span {
-			@apply text-5xl mr-2;
-		}
 		a {
-			@apply relative z-10 lowercase flex px-8;
+			@apply relative z-10 lowercase flex px-8 py-2;
 		}
 		&:hover {
 			a {
 				@apply transition text-black;
 			}
+		}
+	}
+	@media only screen and (max-width: 600px) {
+		flex-direction: column;
+		text-align: center;
+		display: block;
+		@apply text-size-3xl z-100;
+		a {
+			@apply py-8 justify-center;
 		}
 	}
 }

@@ -31,7 +31,11 @@
 	border: none;
 	position: relative;
 	display: block;
+	white-space: break-spaces;
 	&::before {
 		display: none;
+	}
+	@media only screen and (max-width: 600px) {
+		padding: 0;
 	}
 }

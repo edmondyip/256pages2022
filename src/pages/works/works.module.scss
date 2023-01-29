@@ -21,6 +21,18 @@
 		color: var(--code-color);
 		@apply text-size-3xl;
 	}
+	@media only screen and (max-width: 600px) {
+		h2,
+		.function,
+		.code,
+		.return,
+		p {
+			@apply !text-size-xl;
+		}
+		p {
+			padding: 0.5rem 0 0 2rem;
+		}
+	}
 }
 
 .worksList {
@@ -39,6 +51,11 @@
 			h2 {
 				padding: 8px;
 			}
+		}
+	}
+	@media only screen and (max-width: 600px) {
+		p {
+			@apply !text-size-base px-2;
 		}
 	}
 }

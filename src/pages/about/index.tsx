@@ -110,14 +110,14 @@ const AboutPage = ({ content, metaDescription }: PageProps) => {
 				<p>
 					<span className={styles.function}>const</span>{" "}
 					<span className={styles.code}>others</span> = &#91;
-					<span className={styles.code}>"Git"</span>,
-					<span className={styles.code}>"Node"</span>,
-					<span className={styles.code}>"Express"</span>,
-					<span className={styles.code}>"Nginx"</span>,
-					<span className={styles.code}>"Docker"</span>,
-					<span className={styles.code}>"Webpack"</span>,
-					<span className={styles.code}>"Threejs"</span>,
-					<span className={styles.code}>"Jest"</span>
+					<span className={styles.code}>&quot;Git&quot;</span>,
+					<span className={styles.code}>&quot;Node&quot;</span>,
+					<span className={styles.code}>&quot;Express&quot;</span>,
+					<span className={styles.code}>&quot;Nginx&quot;</span>,
+					<span className={styles.code}>&quot;Docker&quot;</span>,
+					<span className={styles.code}>&quot;Webpack&quot;</span>,
+					<span className={styles.code}>&quot;Threejs&quot;</span>,
+					<span className={styles.code}>&quot;Jest&quot;</span>
 					&#93;
 				</p>
 				<p>

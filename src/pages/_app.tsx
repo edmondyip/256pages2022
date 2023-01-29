@@ -16,37 +16,16 @@ interface PageAnimationProps {
 }
 
 const PageAnimation = ({ router, children }: PageAnimationProps) => {
-	const fadeBack = {
-		name: "Fade Back",
-		variants: {
-			initial: {
-				opacity: 0,
-			},
-			animate: {
-				opacity: 1,
-				scale: 1,
-			},
-			exit: {
-				opacity: 0,
-				y: 200,
-			},
-		},
-		transition: {
-			duration: 0.7,
-		},
-	};
-	const [animation] = useState(fadeBack);
 	return (
 		<LazyMotion features={domAnimation}>
 			<AnimatePresence>
 				<m.div
-					key={router.route.concat(animation.name)}
+					key={router.route.concat("Fade Back")}
 					className="page-wrap"
-					initial="initial"
-					animate="animate"
-					exit="exit"
-					variants={animation.variants}
-					transition={animation.transition}
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1, position: "absolute" }}
+					exit={{ opacity: 0, y: 200 }}
+					transition={{ duration: 0.7 }}
 				>
 					{children}
 				</m.div>
