@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
-import { useGetLayoutQuery } from "store/feature/layout/layoutApi";
+// import { useGetLayoutQuery } from "store/feature/layout/layoutApi";
 import Copyright from "components/copyright";
-import { firaCode, bigShouldersDisplay, oswald, outfit } from "styles/fonts";
 import Background from "components/background";
 import PageHeader from "components/PageHeader";
+import { firaCode, bigShouldersDisplay, oswald, outfit } from "styles/fonts";
 
 interface IProps {
 	children: JSX.Element;
@@ -11,9 +11,31 @@ interface IProps {
 }
 
 const Layout = ({ children, router }: IProps) => {
-	const { data, isLoading, error } = useGetLayoutQuery();
 	const { pathname } = useRouter();
-	error && console.log(error);
+	// const { data, isLoading, error } = useGetLayoutQuery();
+	// error && console.log(error);
+	const data = {
+		nav: [
+      {
+        label: "About",
+        path: "/about"
+      },
+      {
+        label: "Works",
+        path: "/works"
+      },
+      {
+        label: "Contact",
+        path: "/contact",
+      },
+      {
+        label: "Blog",
+        path: "https://blog.256pages.com"
+      }
+		],
+		header: "header",
+		copyright: "256PAGES",
+	}
 
 	return (
 		<div
@@ -21,7 +43,7 @@ const Layout = ({ children, router }: IProps) => {
 				bigShouldersDisplay.variable
 			} ${firaCode.variable} ${oswald.variable} ${outfit.variable}`}
 		>
-			{isLoading ? <>loading</> : null}
+			{/* {isLoading ? <>loading</> : null} */}
 			<PageHeader nav={data?.nav} path={pathname} />
 			<main>{children}</main>
 			<Background path={pathname} />

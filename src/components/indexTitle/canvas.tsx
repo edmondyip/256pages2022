@@ -90,6 +90,7 @@ const VideoTitle = ({ index }: canvasProps) => {
 			})
 		);
 		setActive(Number(!active));
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [index]);
 
 	return (

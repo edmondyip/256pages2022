@@ -25,7 +25,7 @@ const layoutApi = (
       }
 		],
 		header: "header",
-		copyright: "256pages",
+		copyright: "256PAGES",
 	});
 };
 

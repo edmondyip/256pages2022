@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { AppProps } from "next/app";
+import { Router } from "next/router";
 import { ThemeProvider } from "next-themes";
 import { store } from "store/store";
 import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
@@ -8,7 +9,6 @@ import Layout from "./layout";
 import "styles/reset.scss";
 import "windi.css";
 import "styles/global.scss";
-import { Router } from "next/router";
 
 interface PageAnimationProps {
 	router: Router;
@@ -35,17 +35,33 @@ const PageAnimation = ({ router, children }: PageAnimationProps) => {
 };
 
 const app = ({ Component, pageProps, router }: AppProps) => {
-	return (
-		<ThemeProvider defaultTheme="dark">
-			<Provider store={store}>
-				<Layout router={router.pathname}>
-					<PageAnimation router={router}>
-						<Component {...pageProps} />
-					</PageAnimation>
-				</Layout>
-			</Provider>
-		</ThemeProvider>
-	);
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const [showing, setShowing] = useState(false);
+
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	useEffect(() => {
+		setShowing(true);
+	}, []);
+
+	if (!showing) {
+		return null;
+	}
+
+	if (typeof window === "undefined") {
+		return <></>;
+	} else {
+		return (
+			<ThemeProvider defaultTheme="dark">
+				<Provider store={store}>
+					<Layout router={router.pathname}>
+						<PageAnimation router={router}>
+							<Component {...pageProps} />
+						</PageAnimation>
+					</Layout>
+				</Provider>
+			</ThemeProvider>
+		);
+	}
 };
 
 export default app;

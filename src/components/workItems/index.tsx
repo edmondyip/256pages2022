@@ -17,41 +17,32 @@ const ListItem = (work: work) => {
 			onMouseEnter={() => setHover(true)}
 			onMouseOut={() => setHover(false)}
 		>
-			{/* <Link
-				href={`/works/${work.id}`}
-				onMouseEnter={() => setHover(true)}
-				onMouseOut={() => setHover(false)}
-			> */}
 			<HoverVideoPlayer
 				videoSrc={work.video}
 				style={{ display: "block" }}
 				pausedOverlay={
 					<Image
 						src={work.cover}
-						width={800}
-						height={600 / ratio}
+						width={640}
+						height={480}
 						alt={work.name}
 						onLoadingComplete={({ naturalWidth, naturalHeight }) =>
 							setRatio(naturalWidth / naturalHeight)
 						}
 						style={{
 							width: "100%",
+							height: "auto"
 						}}
 					/>
 				}
 			/>
-			{/* </Link> */}
-			<h2>
-				{/* <Link href={`/works/${work.id}`}> */}
-				{work.name}
-				{/* </Link> */}
-			</h2>
+			<h2>{work.name}</h2>
 			<p>{work.shortDescription}</p>
 		</li>
 	);
 };
 
-export const WorkListItem = ({ works }: WorkListItemProps) => {
+const WorkListItem = ({ works }: WorkListItemProps) => {
 	return (
 		<>
 			{works.map((work: work, index: number) => (
@@ -60,3 +51,5 @@ export const WorkListItem = ({ works }: WorkListItemProps) => {
 		</>
 	);
 };
+
+export default WorkListItem;

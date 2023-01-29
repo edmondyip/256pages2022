@@ -17,7 +17,7 @@ const contactApi = (
 		},
 		metaDescription: {
 			pageTitle: "Contact Me",
-			pageDescription: "",
+			pageDescription: "Contact Edmond Yip when you have any idea want to realize.",
 			canonicalUrl: "/contact",
 		},
 	});

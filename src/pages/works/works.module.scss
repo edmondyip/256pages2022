@@ -51,6 +51,9 @@
 			h2 {
 				padding: 8px;
 			}
+			p {
+				@apply p-2;
+			}
 		}
 	}
 	@media only screen and (max-width: 600px) {

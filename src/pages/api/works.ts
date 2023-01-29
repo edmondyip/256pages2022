@@ -28,7 +28,7 @@ const worksApi = (req: NextApiRequest, res: NextApiResponse<worksProps>) => {
 		},
 		metaDescription: {
 			pageTitle: "works - 256pages",
-			pageDescription: "",
+			pageDescription: "See works by Edmond Yip",
 			canonicalUrl: "/works",
 		},
 		works: [
