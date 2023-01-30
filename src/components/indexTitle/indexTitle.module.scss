@@ -1,0 +1,41 @@
+.indexTitle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	canvas {
+		min-height: 100vh;
+		touch-action: none;
+		position: relative;
+		z-index: -100;
+		animation: fade-in 2s ease 0.5s forwards;
+	}
+}
+
+.container {
+	display: block;
+	height: 110px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.title {
+	font-size: 1.4rem;
+	font-weight: 300;
+	letter-spacing: 1px;
+	color: #ffffff;
+	text-align: center;
+	text-shadow: 0px 0px 1px rgb(0 0 0 / 20%), 0px 0px 1px rgb(1 0 5 / 10%);
+	border: none;
+	position: relative;
+	display: block;
+	white-space: break-spaces;
+	&::before {
+		display: none;
+	}
+	@media only screen and (max-width: 600px) {
+		padding: 0;
+	}
+}
