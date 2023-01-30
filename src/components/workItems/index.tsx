@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from "next/image";
+import Image from "components/Image"
 import HoverVideoPlayer from "react-hover-video-player";
 import { work } from "pages/api/works";
 
@@ -26,9 +26,9 @@ const ListItem = (work: work) => {
 						width={640}
 						height={480}
 						alt={work.name}
-						onLoadingComplete={({ naturalWidth, naturalHeight }) =>
-							setRatio(naturalWidth / naturalHeight)
-						}
+						// onLoadingComplete={({ naturalWidth, naturalHeight }) =>
+						// 	setRatio(naturalWidth / naturalHeight)
+						// }
 						style={{
 							width: "100%",
 							height: "auto"

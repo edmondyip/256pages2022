@@ -1,6 +1,7 @@
 // import { GetStaticProps } from "next";
-import Image from "next/image";
-import { metaDescription, pageContent } from "types/layout";
+// import Image from "next/image";
+import Image from "components/Image"
+// import { metaDescription, pageContent } from "types/layout";
 import BackgroundTitle from "components/backgroundTitle";
 import { MetaHead } from "components/metaHead";
 import styles from "./about.module.scss";
