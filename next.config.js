@@ -9,7 +9,7 @@ const nextConfig = () => ({
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 		// minimumCacheTTL: 60,
-    unoptimized: false
+    unoptimized: true
   },
 	env: {
 		BASE_URL: "http://localhost:3000"
