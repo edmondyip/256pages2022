@@ -42,13 +42,6 @@ const MeshComponent = ({ index }: canvasProps) => {
 			/>
 			<Intro />
 			<EffectComposer>
-				<SSAO
-					samples={10}
-					radius={10}
-					intensity={10}
-					luminanceInfluence={0.1}
-					color="red"
-				/>
 				<DepthOfField
 					target={[0, 0, 0]}
 					focalLength={0.01}
